@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: processvideo
+  labels:
+    app: processvideo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: processvideo
+  template:
+    metadata:
+      labels:
+        app: processvideo
+    spec:
+      containers:
+        name: processvideo
+        image: jowings/processvideo:v2
+        imagePullPolicy: Always
+        # command: ["python3"]
+        # args: ["favretweet.py"]
